@@ -1,0 +1,33 @@
+name: Lexify support
+description: Report a Lexify problem or ask a general support question.
+title: "[Support] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contacting Lexify support. This request is public. Never include your password, access token, email address, or other private account data.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - iOS
+        - Web
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem without including private account information.
+      placeholder: Tell us what you expected and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Lexify version
+      description: Find this in Settings under About.
