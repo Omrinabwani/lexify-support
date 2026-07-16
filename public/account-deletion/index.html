@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Permanently delete a Lexify account and associated data." />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src https://*.supabase.co; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'" />
+    <title>Delete Account &middot; Lexify</title>
+    <link rel="stylesheet" href="../legal.css" />
+    <script src="../legal-config.js" defer></script>
+    <script src="account-deletion.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="brand"><span class="brand-mark" aria-hidden="true">L</span> Lexify</div>
+      <header>
+        <div class="eyebrow">Account and data controls</div>
+        <h1>Delete your account</h1>
+        <p class="lede">Permanently delete your Lexify login and associated app data. Deletion cannot be undone.</p>
+      </header>
+
+      <section>
+        <h2>Delete immediately in the app</h2>
+        <ol>
+          <li>Open Lexify and sign in.</li>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>Under <strong>Account</strong>, choose <strong>Delete account</strong>.</li>
+          <li>Review the data list, type <strong>DELETE</strong>, and confirm.</li>
+        </ol>
+      </section>
+
+      <section class="warning" aria-labelledby="web-deletion-title">
+        <h2 id="web-deletion-title">Delete securely from the web</h2>
+        <p>Sign in below with the Lexify account you want to remove. Your credentials are sent directly from this browser to Lexify's Supabase Auth service over HTTPS and are never stored by this page.</p>
+
+        <form id="deletion-sign-in" class="legal-form" novalidate>
+          <label for="deletion-email">Account email</label>
+          <input id="deletion-email" name="email" type="email" autocomplete="username" inputmode="email" required />
+          <label for="deletion-password">Password</label>
+          <input id="deletion-password" name="password" type="password" autocomplete="current-password" required />
+          <button id="deletion-sign-in-button" class="button" type="submit">Verify account</button>
+        </form>
+
+        <div id="deletion-confirm-panel" class="confirmation-panel" hidden>
+          <p id="deletion-account" class="signed-in-account"></p>
+          <p>Review the data list below, then type <strong>DELETE</strong> exactly.</p>
+          <form id="deletion-confirm" class="legal-form" novalidate>
+            <label for="deletion-confirmation">Confirmation</label>
+            <input id="deletion-confirmation" name="confirmation" type="text" autocomplete="off" spellcheck="false" required />
+            <button id="deletion-confirm-button" class="button danger" type="submit" disabled>Permanently delete account</button>
+          </form>
+        </div>
+
+        <p id="deletion-status" class="status-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section>
+        <h2>Data removed</h2>
+        <p>The authentication account and linked profile, learning progress, answers, practice history, collections, friend data, coins, and avatar data are removed from the live service. Limited backup or security-log copies may remain briefly for operational or legal requirements before expiry.</p>
+      </section>
+
+      <section>
+        <h2>Need help?</h2>
+        <p>Use the <a href="https://github.com/Omrinabwani/lexify-support/issues/new?template=support.yml">Lexify support form</a> for technical help. It is public: never post your email, password, access token, or other private account data.</p>
+        <p>Read the <a href="../privacy/">Lexify privacy policy</a> for more information.</p>
+      </section>
+
+      <footer>Lexify &middot; English vocabulary learning</footer>
+    </main>
+  </body>
+</html>
