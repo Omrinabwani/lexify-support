@@ -2,6 +2,8 @@ name: Lexify support
 description: Report a Lexify problem or ask a general support question.
 title: "[Support] "
 labels: []
+assignees:
+  - Omrinabwani
 body:
   - type: markdown
     attributes:
